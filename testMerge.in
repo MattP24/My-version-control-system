@@ -1,0 +1,46 @@
+# Test the merge command as well as checkout branch.
+> init
+<<<
++ wug.txt wug.txt
++ wug2.txt wug2.txt
+> add wug.txt
+<<<
+> add wug2.txt
+<<<
+> commit "added 2 wugs"
+<<<
+> branch "Please give me credit"
+<<<
++ wug3.txt wug3.txt
++ wug4.txt wug4.txt
+> add wug3.txt
+<<<
+> add wug4.txt
+<<<
+> commit "added 2 more wugs"
+<<<
+> checkout "Please give me credit"
+<<<
++ wug3.txt wug3.txt
++ wug2.txt notwug.txt
++ wug5.txt wug.txt
+> add wug3.txt
+<<<
+> add wug2.txt
+<<<
+> add wug5.txt
+<<<
+> rm wug.txt
+<<<
+> commit "added stuffs"
+<<<
+> checkout "master"
+<<<
+* wug5.txt
+= wug2.txt wug2.txt
+> merge "Please give me credit"
+<<<
+= wug2.txt notwug.txt
+E wug3.txt
+E wug4.txt
+E wug5.txt

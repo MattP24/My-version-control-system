@@ -1,0 +1,46 @@
+# A test to check if adding, committing, modifying, changing branches, and checking out branches works.
+> init
+<<<
++ wug.txt wug.txt
+> add wug.txt
+<<<
+> commit "added wug"
+<<<
++ wug.txt wug2.txt
+# Must change
+> add wug.txt
+<<<
+> commit "added wug2"
+<<<
++ wug.txt wug3.txt
+# Must change
+> add wug.txt
+<<<
+> commit "added wug3"
+<<<
+> branch cool-beans
+<<<
+= wug.txt wug3.txt
+> checkout cool-beans
+<<<
+= wug.txt wug3.txt
++ wug.txt wug4.txt
+# Must change
+> add wug.txt
+<<<
+> commit "added wug4"
+<<<
+= wug.txt wug4.txt
+> checkout master
+<<<
+= wug.txt wug3.txt
++ wug.txt notwug.txt
+# Must change
+> add wug.txt
+<<<
+> commit "added notwug"
+<<<
+= wug.txt notwug.txt
+> checkout cool-beans
+<<<
+= wug.txt wug4.txt

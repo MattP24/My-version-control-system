@@ -1,0 +1,60 @@
+# Test the extra credit part of status.
+> init
+<<<
++ wug.txt wug.txt
+> add wug.txt
+<<<
+> commit "added wug"
+<<<
+> branch "the better branch"
+<<<
++ aaa.txt wug2.txt
++ bbb.txt wug3.txt
++ ccc.txt wug4.txt
+> add ccc.txt
+<<<
+> add aaa.txt
+<<<
+> rm wug.txt
+<<<
+> status
+=== Branches ===
+*master
+the better branch
+
+=== Staged Files ===
+aaa.txt
+ccc.txt
+
+=== Removed Files ===
+wug.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+bbb.txt
+
+<<<
+> commit "added stuff and removed wug.txt"
+<<<
++ aaa.txt wug4.txt
+> add bbb.txt
+<<<
++ bbb.txt wug4.txt
+> status
+=== Branches ===
+*master
+the better branch
+
+=== Staged Files ===
+bbb.txt
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+aaa.txt
+bbb.txt
+
+=== Untracked Files ===
+
+<<<

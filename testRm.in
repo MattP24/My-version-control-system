@@ -1,0 +1,63 @@
+# Test if add and commit still work after removing files. Also tests status lexicoSort
+> init
+<<<
++ wug.txt wug.txt
+> add wug.txt
+<<<
+> commit "added wug"
+<<<
++ aaa.txt wug2.txt
++ bbb.txt wug3.txt
++ ccc.txt wug4.txt
+> add ccc.txt
+<<<
+> add aaa.txt
+<<<
+> add bbb.txt
+<<<
+> rm wug.txt
+<<<
+> status
+=== Branches ===
+*master
+
+=== Staged Files ===
+aaa.txt
+bbb.txt
+ccc.txt
+
+=== Removed Files ===
+wug.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<
+> commit "added stuff and removed wug.txt"
+<<<
+> rm aaa.txt
+<<<
+> rm bbb.txt
+<<<
++ aaa.txt wug2.txt
++ bbb.txt wug4.txt
+> add aaa.txt
+<<<
+> add bbb.txt
+<<<
+> status
+=== Branches ===
+*master
+
+=== Staged Files ===
+bbb.txt
+
+=== Removed Files ===
+
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<
